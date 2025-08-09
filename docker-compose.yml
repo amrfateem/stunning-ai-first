@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo:6
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./backend
+    env_file:
+      - ./backend/.env.example
+    depends_on:
+      - mongo
+    ports:
+      - "3001:3001"
+    command: ["npm", "run", "start:dev"]
+
+  frontend:
+    build: ./frontend
+    env_file:
+      - ./frontend/.env.local.example
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+
+volumes:
+  mongo_data:
