@@ -185,13 +185,6 @@ Minimal path:
 | Styles missing | Confirm Tailwind compiled (restart dev server) |
 | Bulk delete fails | Missing header `x-confirm-delete-all: YES` |
 
-## 📹 Loom Walkthrough Script (Condensed)
-1. Show repo layout
-2. `docker compose up --build`
-3. Submit idea -> show network tab (POST + GET)
-4. List view -> open detail
-5. Demonstrate delete + bulk delete safeguard
-6. Briefly explain how to plug real AI
 
 ## 📝 License
 MIT (add a LICENSE file if distributing externally)
